@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frota Log - Exemplo</title>
+    <link rel="stylesheet" href="../styles/main.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu-container navbar container">
+            <img src="./src/assets/img/logo-branca.png" alt="" style="margin-right: 20px;">
+            <ul class="menu-container__list nav nav-pills d-block d-md-flex justify-content-end">
+                <li class="menu-container__list__item nav-item active" style="display: flex; flex-direction: row; flex-wrap: nowrap;align-content: center; align-items: stretch;">
+                    <img class="menu__item__icon" src="./src/assets/img/cadastro.png" alt="cadastro" style="margin-right: 5px;">
+                    <span style="color: #fff;">Cadastro</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main"> <!-- style="display: grid; -->
+        <div class="main__crud" style="margin-right: 20px;">
+            <h3>Dados</h3>
+            <form id="main__crud__form form-group">
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Status</label>
+                    <input class="form-control" type="text" id="campo-status">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Horario de Chegada</label>
+                    <input class="form-control" type="text" id="campo-chegada">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Horario de Saída</label>
+                    <input class="form-control" type="text" id="campo-saida">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Placa do Veículo</label>
+                    <input class="form-control" type="text" id="campo-veiculo">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Modelo do Veículo</label>
+                    <input class="form-control" type="text" id="campo-modelo-veiculo">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Data/Hora</label>
+                    <input class="form-control" type="text" id="campo-data">
+                </div>
+                <div class="main__crud__form__campo" style="margin-top: 15px;">
+                    <label for="">Motorista</label>
+                    <input class="form-control" type="text" id="campo-motorista">
+                </div>
+                <button style="margin-top: 15px;" class="btn btn-success" id="enviar">Adicionar</button>
+            </form>
+        </div>
+        <div class="main__listagem">
+            <h3>Adicionados</h3>
+            <ul id="lista-adicionados">
+            </ul>
+        </div>
+    </main>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            /* background-color: greenyellow; */
+        }
+        
+        .header {
+            background-color: #61B45F;
+
+            .menu-container {
+                display: flex;        
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                img {
+
+                }
+
+                ul {
+                    list-style: none;
+    
+                    li {
+    
+                    }
+                }
+            }
+        }
+
+        .main {
+            padding: 30px 110px;
+            display: flex;
+            &__crud {
+                background-color: red !important;
+                &__form {
+                    background-color: red !important;
+                    
+                    &__campo {
+                        color: red !important;
+                    }
+                    
+                }
+            }
+        }
+    </style>
+
+    <script>
+        document.getElementById("enviar").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            // Capturar valores dos campos
+            const status = document.getElementById("campo-status").value;
+            const chegada = document.getElementById("campo-chegada").value;
+            const saida = document.getElementById("campo-saida").value;
+            const veiculo = document.getElementById("campo-veiculo").value;
+            const modelo = document.getElementById("campo-modelo-veiculo").value;
+            const data = document.getElementById("campo-data").value;
+            const motorista = document.getElementById("campo-motorista").value;
+            
+            // Criar um novo elemento li
+            const li = document.createElement("li");
+            li.textContent = `Status: ${status} | Chegada: ${chegada} | Saída: ${saida} | Veículo: ${veiculo} | Modelo: ${modelo} | Data/Hora: ${data} | Motorista: ${motorista}`;
+            
+            // Adicionar a nova li na ul "lista-adicionados"
+            document.getElementById("lista-adicionados").appendChild(li);
+            
+            // Limpar os campos do formulário após adicionar
+            document.getElementById("main__crud__form form-group").reset();
+        });
+
+    </script>
+</body>
+</html>
