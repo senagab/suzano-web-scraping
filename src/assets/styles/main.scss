@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: green;
+}
+
+.header {
+    background-color: greenyellow;
+
+    ul {
+        list-style: none;
+
+        li {
+
+        }
+    }
+}
+
+.main {
+
+    &__crud {
+
+    }
+}
