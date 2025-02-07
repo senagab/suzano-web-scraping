@@ -44,7 +44,7 @@
                     <input class="form-control" type="text" id="campo-modelo-veiculo">
                 </div>
                 <div class="main__crud__form__campo" style="margin-top: 15px;">
-                    <label for="">Data/Hora</label>
+                    <label for="">Data</label>
                     <input class="form-control" type="text" id="campo-data">
                 </div>
                 <div class="main__crud__form__campo" style="margin-top: 15px;">
@@ -98,15 +98,14 @@
         .main {
             padding: 30px 110px;
             display: flex;
-            &__crud {
-                background-color: red !important;
-                &__form {
-                    background-color: red !important;
-                    
-                    &__campo {
-                        color: red !important;
+
+            &__listagem {
+                
+                lista-adicionados {
+
+                    li {
+                        margin-bottom: 50px;
                     }
-                    
                 }
             }
         }
@@ -127,7 +126,7 @@
             
             // Criar um novo elemento li
             const li = document.createElement("li");
-            li.textContent = `Status: ${status} | Chegada: ${chegada} | Saída: ${saida} | Veículo: ${veiculo} | Modelo: ${modelo} | Data/Hora: ${data} | Motorista: ${motorista}`;
+            li.textContent = `Status: ${status} | Chegada: ${chegada} | Saída: ${saida} | Veículo: ${veiculo} | Modelo: ${modelo} | Data: ${data} | Motorista: ${motorista}`;
             
             // Adicionar a nova li na ul "lista-adicionados"
             document.getElementById("lista-adicionados").appendChild(li);
