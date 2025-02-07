@@ -19,7 +19,10 @@ service = Service(r"C:\Users\senag\Documents\0 - Projects\Freelance\Suzano Web S
 driver = webdriver.Chrome(service=service)
 wait = WebDriverWait(driver, 10)  # Espera até 10 segundos para os elementos aparecerem
 
+# Abrir o site e maximizar a janela
 driver.get("https://suzano-web-scraping.vercel.app/")
+driver.maximize_window()  # Maximizar a janela
+
 time.sleep(3)  # Garantir carregamento inicial da página
 
 # Iterar sobre as linhas da planilha, pulando o cabeçalho
