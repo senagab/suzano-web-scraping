@@ -3,6 +3,8 @@
 <p align="left">
     <img src="https://img.shields.io/badge/selenium-v4.28.1-green?logo=selenium&labelColor=white" alt="Selenium version">
     <img src="https://img.shields.io/badge/python-v3.13.2-blue?logo=python&labelColor=white" alt=" version">
+    <img src="https://img.shields.io/badge/tkinter-v8.6.15-299bdc?logo=openpyxl &labelColor=white" alt=" version">
+    <img src="https://img.shields.io/badge/openpyxl-v3.1.5-299bdc?logo=openpyxl &labelColor=white" alt=" version">
 </p>
 
 This project automates the process of filling out a web form using Selenium and data from an Excel spreadsheet. A simple Tkinter-based GUI allows users to trigger the automation with a button click.
